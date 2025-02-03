@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
     <title>Accesibilidad Ejemplos mejorado</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="Accesibilidad%20Ejemplos%20mal_files/estilos.css">
 </head>
 
 <body>
@@ -13,20 +14,20 @@
 
     <!-- MENÚ CON ENLACES DESCRIPTIVOS -->
     <h2>Elementos repetitivos - Ejemplo mejorado</h2>
-    <nav>
+    <nav aria-label="Menú de navegación" role="navigation">
         <ul>
-            <li><a href="inicio.html">Inicio - Menú principal</a>
-                <ul>
-                    <li><a href="submenu1.html">Submenú 1: Información general</a></li>
-                    <li><a href="submenu2.html">Submenú 2: Productos</a></li>
-                    <li><a href="submenu3.html">Submenú 3: Contacto</a></li>
+            <li><a href="inicio.html" aria-label="Inicio - Menú principal">Inicio</a>
+                <ul  tabindex="0" aria-label="Submenú principal">
+                    <li><a href="submenu1.html" aria-label="Información general">Información general</a></li>
+                    <li><a href="submenu2.html" aria-label="Productos">Productos</a></li>
+                    <li><a href="submenu3.html" aria-label="Contacto">Contacto</a></li>
                 </ul>
             </li>
             <li><a href="menu2.html">Menú de servicios</a>
-                <ul>
-                    <li><a href="servicio1.html">Servicio 1: Soporte técnico</a></li>
-                    <li><a href="servicio2.html">Servicio 2: Asesoría</a></li>
-                    <li><a href="servicio3.html">Servicio 3: Consultoría</a></li>
+                <ul tabindex="0" aria-label="Submenú de servicios">
+                    <li><a href="servicio1.html" aria-label="Soporte técnicol">Soporte técnico</a></li>
+                    <li><a href="servicio2.html" aria-label="Asesoría">Asesoría</a></li>
+                    <li><a href="servicio3.html" aria-label="Consultoría">Consultoría</a></li>
                 </ul>
             </li>
         </ul>
@@ -35,58 +36,73 @@
     <hr>
 
     <!-- FORMULARIOS MEJORADOS CON LABELS -->
-    <h2>Formularios - Ejemplo mejorado</h2>
+    <h2  tabindex="0">Formularios - Ejemplo mejorado</h2>
     <form method="post" action="#">
-        <p><strong>Información personal</strong></p>
+        <p tabindex="0" role="note"><strong>Información personal</strong></p>
 
         <label for="nombre">Nombre:</label><br>
-        <input id="nombre" required type="text"><br>
+        <input id="nombre" required type="text" aria-label="Ingrese su nombre"><br>
 
         <label for="correo">Correo Electrónico:</label><br>
-        <input id="correo" required type="email"><br>
+        <input id="correo" required type="email" aria-label="Correo Electrónicoe"><br>
 
         <label for="pagina">Página personal:</label><br>
-        <input id="pagina" placeholder="URL de tu página web personal" type="url"><br>
+        <input id="pagina" placeholder="URL de tu página web personal" type="url" aria-label="Ingrese su Página personal"><br>
 
-        <p><strong>Otra información</strong></p>
+        <p tabindex="0" role="note"><strong>Otra información</strong></p>
         <label for="fecha">Fecha:</label><br>
-        <input id="fecha" type="date"><br>
+        <input id="fecha" type="date" aria-label="Ingrese la Fecha"><br>
 
-        <label for="telefono">Teléfono:</label><br>
-        <input id="telefono" type="tel"><br>
+        <label for="mes">Mes:</label><br>
+        <input id="mes" type="month" aria-label="Ingrese el mes"><br>
 
-        <label for="color">Color Favorito:</label><br>
-        <input id="color" value="#000000" type="color"><br>
+        <label for="semana">Semana:</label><br>
+        <input id="semana" type="week" aria-label="Ingrese la semana"><br>
 
-        <p><strong>Controles</strong></p>
-        <input value="Borrar" type="reset">
-        <input value="Enviar" type="submit">
+        <label for="tiempo">Tiempo:</label><br>
+        <input id="tiempo" type="time" aria-label="Ingrese la hora"><br>
+
+        <label for="tiempo_fecha">Fecha y tiempo:</label><br>
+        <input id="tiempo_fecha" type="datetime-local" aria-label="Ingrese fecha y hora"><br>
+
+        <label for="numero">Número (min -10, max 10):</label><br>
+        <input id="numero" min="-10" max="10" value="0" type="number" aria-label="Ingrese un numero entre -10 a 10"><br>
+
+        <label for="intervalo">Intervalo (min 0, max 100):</label><br>
+        <input id="intervalo" min="0" max="100" value="50" type="range" aria-label="Ingrese un numero entre 0 y 100"><br>
+
+        <label for="busqueda">Búsqueda:</label><br>
+        <input id="busqueda" type="search" aria-label="Ingrese su Búsqueda"><br>
+
+        <p tabindex="0" role="note"><strong>Controles</strong></p>
+        <input value="Borrar" type="reset" aria-label="Borrar los datos">
+        <input value="Enviar" type="submit" aria-label="Enviar los datos">
     </form>
 
     <hr>
 
     <!-- MEJORANDO DESCRIPCIONES DE IMÁGENES -->
-    <h2>Imágenes - Ejemplo mejorado</h2>
-    <p>
-        <a href="anterior.html"><img src="flecha-izq.gif" alt="Ir a la página anterior"></a>
-        <a href="indice.html">Ir al índice de contenidos</a>
-        <a href="siguiente.html"><img src="flecha-der.gif" alt="Ir a la siguiente página"></a>
+    <h2 tabindex="0">Imágenes - Ejemplo mejorado</h2>
+    <p tabindex="0" aria-label="Galeria de imagenes" role="slider">
+        <a href="anterior.html"><img src="flecha-izq.gif" alt="Ir a la imagen anterior"></a>
+        <a href="indice.html">Ir al índice de imagenes</a>
+        <a href="siguiente.html"><img src="flecha-der.gif" alt="Ir a la siguiente imagen"></a>
     </p>
 
-    <p>
+    <p tabindex="0" aria-label="links de interes" role="note">
         Menú:<br><br>
-        <a href="unete.html"><img src="logo.png" alt="Botón Únete"> Únete</a><br>
-        <a href="equipo.html"><img src="logo.png" alt="Botón Equipo"> Equipo</a><br>
-        <a href="contacto.html"><img src="Alogo.png" alt="Botón Contacto"> Contacto</a><br>
-        <a href="siguenos.html"><img src="logo.png" alt="Botón Síguenos"> Síguenos</a>
+        <a href="unete.html"><img src="logo.png" alt="Botón Únete" role="button"> Únete</a><br>
+        <a href="equipo.html"><img src="logo.png" alt="Botón Equipo" role="button" > Equipo</a><br>
+        <a href="contacto.html"><img src="Alogo.png" alt="Botón Contacto" role="button"> Contacto</a><br>
+        <a href="siguenos.html"><img src="logo.png" alt="Botón Síguenos" role="button"> Síguenos</a>
     </p>
 
     <hr>
 
     <!-- MAPAS DE IMÁGENES MEJORADOS -->
-    <h2>Mapas de imágenes - Ejemplo mejorado</h2>
-    <img src="img-map-area.png" alt="Mapa interactivo de navegación con enlaces importantes" usemap="#map1" height="480" width="948">
-    <map name="map1">
+    <h2 tabindex="0" role="note">Mapas de imágenes - Ejemplo mejorado</h2>
+    <img src="img-map-area.png" alt="Mapa interactivo de imagen con enlaces importantes" usemap="#map1" height="480" width="948">
+    <map name="map1" role="navigation" aria-label="Menu de navegación">
         <area shape="rect" coords="18,25,221,63" href="index.html" alt="Ir a la página de inicio">
         <area shape="rect" coords="337,40,396,64" href="unete.html" alt="Unirse a nosotros">
         <area shape="rect" coords="424,40,491,65" href="equipo.html" alt="Nuestro equipo">
@@ -97,18 +113,18 @@
     <hr>
 
     <!-- ENLACES MÁS DESCRIPTIVOS -->
-    <h2>Enlace - Ejemplo mejorado</h2>
-    <h3>A mi hija mayor se le ha caído su primer diente</h3>
-    <p>Estábamos desayunando cuando de repente sucedió. <a href="noticia-hija-mayor.html">Leer más sobre la hija mayor</a></p>
+    <h2 tabindex="0" role="note">Enlace - Ejemplo mejorado</h2>
+    <h3 tabindex="0" role="article">A mi hija mayor se le ha caído su primer diente</h3>
+    <p tabindex="0">Estábamos desayunando cuando de repente sucedió. <a href="noticia-hija-mayor.html" aria-label="abrir para leer mas sobre el articulo">Leer más sobre la hija mayor</a></p>
 
-    <h3>A mi hija pequeña le ha salido su primera muela</h3>
-    <p>Después de comer, la pequeña dijo que le molestaba la boca. <a href="noticia-hija-pequena.html">Leer más sobre la hija pequeña</a></p>
+    <h3 tabindex="0" role="article">A mi hija pequeña le ha salido su primera muela</h3>
+    <p tabindex="0">Después de comer, la pequeña dijo que le molestaba la boca. <a href="noticia-hija-pequena.html" aria-label="abrir para leer mas sobre el articulo">Leer más sobre la hija pequeña</a></p>
 
     <hr>
 
     <!-- TABLAS MEJORADAS CON TH Y SCOPE -->
-    <h2>Tablas - Ejemplo mejorado</h2>
-    <table border="1">
+    <h2 id="tabla-horario">Tablas - Ejemplo mejorado</h2>
+    <table border="1" aria-labelledby="tabla-horario">
         <thead>
             <tr>
                 <th scope="col"></th>
